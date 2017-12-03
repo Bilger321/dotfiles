@@ -2,6 +2,8 @@ export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
 alias clean="clear && printf '\e[3J'"
+alias ebp="nano /home/pi/.bash_profile"
+alias sudo="sudo "
 
 function news {
 curl -s http://feeds.reuters.com/reuters/topNews?format=xml | grep "<title>" | sed -e 's/<[^>]*>//g' | grep -v "Reuters: Top News"
@@ -15,8 +17,8 @@ let hours=$((${upSeconds}/3600%24))
 let days=$((${upSeconds}/86400))
 UPTIME=`printf "%d days, %02dh%02dm%02ds" "$days" "$hours" "$mins" "$secs"`
 
-echo "`clean`"
 echo "
+`clean`
 $(tput setaf 2)   .~~.   .~~.    `figlet -f kban Welcome | sed -n '8p' | lolcat -f -S "$rand"`
 $(tput setaf 2)  '. \ ' ' / .'   `figlet -f kban Welcome | sed -n '1p' | lolcat -f -S "$rand"`
 $(tput setaf 1)   .~ .~~~..~.    `figlet -f kban Welcome | sed -n '2p' | lolcat -f -S "$rand"`
@@ -29,4 +31,4 @@ $(tput setaf 1)   '~ .~~~. ~'    System.......: `uname -srmo`
 $(tput setaf 1)       '~'        Uptime.......: ${UPTIME}
 $(tput setaf 1)Your Location and Weather......: `curl -s wttr.in/@$(curl -s ipinfo.io/ip)?0q`
 $(tput sgr0)"
-
+pi@raspberrypi:~$
