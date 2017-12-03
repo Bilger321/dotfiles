@@ -31,4 +31,3 @@ $(tput setaf 1)   '~ .~~~. ~'    System.......: `uname -srmo`
 $(tput setaf 1)       '~'        Uptime.......: ${UPTIME}
 $(tput setaf 1)Your Location and Weather......: `curl -s wttr.in/@$(curl -s ipinfo.io/ip)?0q`
 $(tput sgr0)"
-pi@raspberrypi:~$
