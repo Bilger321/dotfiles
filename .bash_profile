@@ -6,7 +6,7 @@ alias ebp="nano /home/pi/.bash_profile"
 alias sudo="sudo "
 
 function news {
-curl -s http://feeds.reuters.com/reuters/topNews?format=xml | grep "<title>" | sed -e 's/<[^>]*>//g' | grep -v "Reuters: Top News"
+curl -s http://feeds.reuters.com/reuters/topNews?format=xml | grep "<title>" | sed -e 's/<[^>]*>//g' -e 's/^[ \t]*//' | grep -v "Reuters: Top News"
 }
 
 let rand="$RANDOM"
