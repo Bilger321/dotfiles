@@ -13,6 +13,11 @@ function weather {
 curl -s wttr.in/@$(curl -s ipinfo.io/ip)?0q | sed -e 's/↖/⭦/g' -e 's/↗/⭧/g' -e 's/↘/⭨/g' -e 's/↙/⭩/g'
 }
 
+function forecast {
+curl -s wttr.in/@$(curl -s ipinfo.io/ip)?n | sed -e 's/↖/⭦/g' -e 's/↗/⭧/g' -e 's/↘/⭨/g' -e 's/↙/⭩/g'
+}
+
+
 let rand="$RANDOM"
 let upSeconds="$(/usr/bin/cut -d. -f1 /proc/uptime)"
 let secs=$((${upSeconds}%60))
