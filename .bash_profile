@@ -9,21 +9,24 @@ function news {
 curl -s http://feeds.reuters.com/reuters/topNews?format=xml | grep "<title>" | sed -e 's/<[^>]*>//g' -e '2,$ s/^[ \t]*//' | grep -v "Reuters: Top News"
 }
 
+function qr {
+curl -s http://qrenco.de/$1
+}
+
 function weather {
 curl -s wttr.in/@$(curl -s ipinfo.io/ip)?0q | sed -e 's/↖/⭦/g' -e 's/↗/⭧/g' -e 's/↘/⭨/g' -e 's/↙/⭩/g'
 }
 
-function forecast {
-curl -s wttr.in/@$(curl -s ipinfo.io/ip)?n | sed -e 's/↖/⭦/g' -e 's/↗/⭧/g' -e 's/↘/⭨/g' -e 's/↙/⭩/g'
+function forecast { 
+curl -s wttr.in/@$(curl -s ipinfo.io/ip)?n | sed -e 's/↖/⭦/g' -e 's/↗/⭧/g' -e 's/↘/⭨/g' -e 's/↙/⭩/g' 
 }
 
-
-let rand="$RANDOM"
-let upSeconds="$(/usr/bin/cut -d. -f1 /proc/uptime)"
-let secs=$((${upSeconds}%60))
-let mins=$((${upSeconds}/60%60))
-let hours=$((${upSeconds}/3600%24))
-let days=$((${upSeconds}/86400))
+let rand="$RANDOM" 
+let upSeconds="$(/usr/bin/cut -d. -f1 /proc/uptime)" 
+let secs=$((${upSeconds}%60)) 
+let mins=$((${upSeconds}/60%60)) 
+let hours=$((${upSeconds}/3600%24)) 
+let days=$((${upSeconds}/86400)) 
 UPTIME=`printf "%d days, %02dh%02dm%02ds" "$days" "$hours" "$mins" "$secs"`
 
 echo "
