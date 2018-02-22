@@ -6,6 +6,10 @@ alias clean="clear && printf '\e[3J'"
 alias ebp="nano /home/pi/.bash_profile"
 alias sudo="sudo "
 
+#Scan for devices on network.
+#TODO: Add potion to identify MAC address vendor
+alias scan="nmap -sn 192.168.0.* | grep -i "MAC" | awk '{print $3 $4}'"
+
 #News function. Possibly works with other news outlets. Untested 12/27/17.
 #TODO: Add options for news outlets (BBC FOX CBS AFP).
 function news {
