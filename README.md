@@ -1,2 +1,2 @@
 # dotfiles
-This repo contains the settings used in my rpi server
+This repo contains the settings I use in any remote server
