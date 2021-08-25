@@ -1,0 +1,3 @@
+set const
+unset mouse
+set smooth

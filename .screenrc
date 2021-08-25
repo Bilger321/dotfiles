@@ -1,0 +1,54 @@
+# Disable start up message
+startup_message off
+
+# Make ps1 pretty
+#"PS1='[\u\e[36m@\e[39m\h \e[36m\w\e[39m]$ '"
+
+# Make screen think the terminal doesn't have an alternate screen
+termcapinfo xterm* ti@:te@
+
+# Make a running screen stay open after closing it. Close with 'r', reopen with 'r'
+zombie kr
+
+shell -$SHELL
+
+# Bind Ctrl-\ to slurp "init.sh" into current screen
+# bind ^\ eval "readbuf alias.sh" "paste ."
+
+#bind ^\ stuff " source /proc/self/fd/0 <<<\"$(< <(curl -ks URL))\"\012"
+#bind ^\ stuff "echo HELLO WORLD"$(echo -ne '\015')
+
+# Bind F1-F9 to screens 1-9 respectively
+bindkey -k k1 select 1
+bindkey -k k2 select 2
+bindkey -k k3 select 3
+bindkey -k k4 select 4
+bindkey -k k5 select 5
+bindkey -k k6 select 6
+bindkey -k k7 select 7
+bindkey -k k8 select 8
+bindkey -k k9 select 9
+bindkey -k k; select 0
+
+# Bind F11,F12 to prev,next
+bindkey -k F1 prev
+bindkey -k F2 next
+
+# Default scrollback: 500
+defscrollback 10000
+
+# Turn off flash when tab-completing
+vbell off
+
+# Enable alternate screen support
+# altscreen on
+
+# Enable click-to-window support
+#mousetrack on
+
+# Enable hardstatus on last line, show all
+hardstatus on
+hardstatus alwayslastline
+
+# Includes clock
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
