@@ -55,3 +55,6 @@ test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
 # Adding a space make aliases work.
 alias sudo="sudo "
+
+# Alias vi to vim
+alias vi=vim
