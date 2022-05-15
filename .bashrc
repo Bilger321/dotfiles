@@ -61,3 +61,4 @@ alias vi=vim
 
 # Set ls to color output.
 alias ls='ls --color=auto'
+. "$HOME/.cargo/env"

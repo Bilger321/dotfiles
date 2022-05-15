@@ -13,4 +13,4 @@ export PATH
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-#source "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
