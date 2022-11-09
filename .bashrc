@@ -53,6 +53,10 @@ complete -F __complete_ssh_host qq
 # Change dircolors if configured, currently configured for Nord colorscheme.
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
+# Fixing X11 forwarding
+alias x11="DISPLAY=localhost:10 "
+complete -c x11
+
 # Adding a space make aliases work.
 alias sudo="sudo "
 
@@ -61,4 +65,3 @@ alias vi=vim
 
 # Set ls to color output.
 alias ls='ls --color=auto'
-. "$HOME/.cargo/env"
