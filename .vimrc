@@ -20,7 +20,7 @@ set encoding=utf-8
 set clipboard=unnamedplus
 set number
 set pastetoggle=<F2>
-showcmd
+set showcmd
 
 """" Vim Appearance
 " Search settings
